@@ -2,12 +2,11 @@
 # What this script does:
 #   1. Extract the duration of the input audio file
 #   2. Find unmarked silent intervals in the SRT file and add them to the TextGrid
-#   3. Assign separate tiers to individual speakers in the TextGrid according to the information given by whisperX
-#   4. Separate consecutive uppercase letters (e.g., SRT -> S R T)
-#   5. Convert numbers to word form in English (e.g., 25 -> twenty-five)
+#   3. Optional: Assign separate tiers to individual speakers in the TextGrid if speaker info is provided at the beginning of subtitle text
+#   4. Optional: Separate consecutive uppercase letters (e.g., SRT -> S R T)
+#   5. Optional: Convert numbers to word form in English (e.g., 25 -> twenty-five)
 #   6. Generates a CSV file which logs all instances of consecutive uppercase letters and numbers.
 # Ping Hei Yeung (github.com/yeungpinghei/)
-# This is not the final version. Some bugs have not been fixed yet.
 # Feb 5, 2025
 
 import re
