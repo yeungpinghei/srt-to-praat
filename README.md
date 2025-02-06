@@ -14,7 +14,9 @@ python3 srt_to_tg.py srt_input media_input tg_output csv_output -d -c
 `srt_input`: Path to the input .srt file.
 
 `media_input`: Path to the input audio file. This is needed to determine the total duration of the output .textGrid file. A wide range of media formats are supported.
+
 **Video**: MXF, MKV, OGM, AVI, DivX, WMV, QuickTime, RealVideo, Mpeg-1, MPEG-2, MPEG-4, DVD-Video (VOB), DivX, XviD, MSMPEG4, ASP, H.264 (Mpeg-4 AVC)
+
 **Audio**: OGG, MP3, WAV, RealAudio, AC3, DTS, AAC, M4A, AU, AIFF, Opus.
 
 `tg_output`: Path to the output .TextGrid file.
@@ -22,6 +24,6 @@ python3 srt_to_tg.py srt_input media_input tg_output csv_output -d -c
 `csv_output`: Path to the output .csv file. The script generates a CSV file which logs all instances of consecutive uppercase letters and numbers in the subtitles. It is important to edit them out if you intend to use forced alignment tools like [Montreal Forced Aligner](https://montreal-forced-aligner.readthedocs.io/) as they do not process acronyms and numbers properly.
 
 # Options
-`-d`, `--diarize` enables speaker diarization if each subtitle in your .srt file starts with the name of the speaker in the format `[SPEAKER_NAME]: ` It gives each speaker a separate tier in the TextGrid file.
+`-d`, `--diarize` enables speaker diarization if each subtitle in your .srt file starts with the name of the speaker in the format `[SPEAKER_NAME]:` It gives each speaker a separate tier in the TextGrid file.
 
 `-c`, `--convert-numbers` adds space in between consecutive uppercase letters (e.g., *SRT → S R T*) and converts numbers to English words (e.g., *25 → twenty-five*).
