@@ -10,12 +10,16 @@ Go to Terminal/Command Prompt and run the following command:
 ```
 python3 srt_to_tg.py srt_input media_input tg_output csv_output -d -c
 ```
-Replace the variables `srt_input` and `media_input with the directory and name of your SRT file and audio/video file.
+# Arguments
+`srt_input`: Path to the input .srt file.
 
-Replace the variables `tg_output` and `csv_output` with the preferred names of our output .TextGrid and .csv files.
-Thus script generates a CSV file which logs all instances of consecutive uppercase letters and numbers in the subtitles. It is important to edit them out if you intend to use forced alignment tools like [Montreal Forced Aligner](https://montreal-forced-aligner.readthedocs.io/) as they do not process acronyms and numbers properly.
+`media_input`: Path to the input audio file. This is needed to determine the total duration of the output .textGrid file. A wide range of media formats are supported including MXF, MKV, OGM, AVI, DivX, WMV, QuickTime, RealVideo, Mpeg-1, MPEG-2, MPEG-4, DVD-Video (VOB), DivX, XviD, MSMPEG4, ASP, H.264 (Mpeg-4 AVC), OGG, MP3, WAV, RealAudio, AC3, DTS, AAC, M4A, AU, AIFF, Opus.
+
+`tg_output`: Path to the output .TextGrid file.
+
+`csv_output`: Path to the output .csv file. The script generates a CSV file which logs all instances of consecutive uppercase letters and numbers in the subtitles. It is important to edit them out if you intend to use forced alignment tools like [Montreal Forced Aligner](https://montreal-forced-aligner.readthedocs.io/) as they do not process acronyms and numbers properly.
 
 # Options
-`-d`, `--diarize` activates speaker diarization if each subtitle in your .srt file starts with the name of the speaker in the format `[SPEAKER_NAME]: ` It gives each speaker identified by whisperX a separate tier in the TextGrid file.
+`-d`, `--diarize` enables speaker diarization if each subtitle in your .srt file starts with the name of the speaker in the format `[SPEAKER_NAME]: ` It gives each speaker a separate tier in the TextGrid file.
 
 `-c`, `--convert-numbers` adds space in between consecutive uppercase letters (e.g., SRT → S R T) and converts numbers to English words (e.g., 25 → twenty-five).
