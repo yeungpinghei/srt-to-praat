@@ -5,7 +5,9 @@ This Python script converts .srt subtitle files to Praat .TextGrid files with ex
 
 # Usage
 Go to Terminal/Command Prompt and run the following command:
-```bash python3 srt_to_tg.py srt_input media_input tg_output csv_output -d -c```
+```
+python3 srt_to_tg.py srt_input media_input tg_output csv_output -d -c
+```
 Replace the variables `srt_input` and `media_input with the directory and name of your SRT file and audio/video file.
 Replace the variables tg_output` and csv_output with the preferred names of our output .TextGrid and .csv files.
 Thus script generates a CSV file which logs all instances of consecutive uppercase letters and numbers in the subtitles. It is important to edit them out if you intend to use forced alignment tools like [Montreal Forced Aligner](https://montreal-forced-aligner.readthedocs.io/) as they do not process acronyms and numbers properly.
